@@ -6,9 +6,11 @@ class SearchBar extends React.Component {
   onFormSubmit = (event) =>{
     // to prevent reload when hit enter
     event.preventDefault();
-
-    console.log(this.state.term)
-  }
+    // look at props object & we call a function that
+    // was passed into onSubmit props & we invoke with
+    // this.state.term
+    this.props.onSubmit(this.state.term)
+  };
 
   render(){
     return(
